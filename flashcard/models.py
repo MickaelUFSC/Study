@@ -18,6 +18,16 @@ class Flashcard(models.Model):
 
     def __str__(self):
         return self.pergunta
+    
+    @property
+    def css_dificuldade(self):
+        if self.dificuldade == 'F':
+            return 'flashcard-facil'
+        elif self.dificuldade == 'M':
+            return 'flashcard-medio'
+        elif self.dificuldade == 'D':
+            return 'flashcard-dificil'
+
 
 
 class FlashcardDesafio(models.Model):
